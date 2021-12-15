@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify;
 from lista_produtos.lista_produtos import produtos
-print(produtos)
 
 app = Flask(__name__)
 
@@ -30,7 +29,6 @@ def update(product_id: int):
             return jsonify(produto), 204
 
 @app.delete('/products/<int:product_id>')
-
 def delete(product_id: int):
     for produto in produtos:
         if produto['id'] == product_id:
